@@ -48,9 +48,8 @@ export class MuscleListComponent implements OnInit {
     this.isInsert = !this.isInsert;
   }
 
-  onNewMuscle(newMuscle: Muscle) {
+  onNewMuscle(newMuscle: any) {
     this.muscles.push(newMuscle);
     this.showAddMuscleComponent();
   }
-
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Muscle } from '../muscle';
+import { MuscleService } from '../muscle.service';
 
 @Component({
   selector: 'app-muscle-add',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuscleAddComponent implements OnInit {
 
-  constructor() { }
+  muscle: Muscle;
+  errorMessage: string;
+  @Output() newMuscle = new EventEmitter<Muscle>();
+
+  constructor(private muscleService: MuscleService) {
+    this.muscle = {} as Muscle;
+   }
 
   ngOnInit(): void {
   }
 
+  onSubmit(muscle: Muscle) {
+    muscle.id = undefined;
+    this.muscleService.addAndUpdateMuscle(muscle).subscribe(
+      newMuscle => {
+        this.muscle = newMuscle;
+        this.newMuscle.emit(this.muscle);
+      },
+      error => this.errorMessage = error as any
+    );
+  }
 }
