@@ -11,6 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MusclesModule } from './muscles/muscles.module';
 import HttpErrorHandler from './error.service';
+import { SerieModule } from './series/series.module';
+import { ExerciceModule } from './exercices/exercices.module';
+import { WorkoutModule } from './workouts/workouts.module';
+import { PartsModule } from './parts/parts.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +26,10 @@ import HttpErrorHandler from './error.service';
     FormsModule,
     HttpClientModule,
     MusclesModule,
+    SerieModule,
+    ExerciceModule,
+    WorkoutModule,
+    PartsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
