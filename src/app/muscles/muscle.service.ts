@@ -25,8 +25,8 @@ export class MuscleService {
     );
   }
 
-  getMuscleByID(msucleID: String): Observable<Muscle> {
-    return this.http.get<Muscle>((this.entityUrl + '/' + msucleID))
+  getMuscleByID(muscleID: String): Observable<Muscle> {
+    return this.http.get<Muscle>((this.entityUrl + '/' + muscleID))
     .pipe(
       catchError(this.handlerError('getMuscleID', {} as Muscle))
     );
