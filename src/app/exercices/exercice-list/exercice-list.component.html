@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>Exercices</h2>
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th rowspan="2">Nom</th>
+            <th rowspan="2">Muscle</th>
+            <th colspan="3" style="text-align: center;">Séries</th>
+            <th rowspan="2">Action</th>
+          </tr>
+          <tr>
+            <th>N° séries</th>
+            <th>répétition</th>
+            <th>Poids</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let exercice of exercices">
+            <td>{{ exercice.name }}</td>
+            <td>{{ exercice.muscle.name }}</td>
+            <td>
+              <tr *ngFor="let serie of exercice.series">
+                {{ serie.numSeries }}
+              </tr>
+            </td>
+            <td>
+              <tr *ngFor="let serie of exercice.series">
+                {{ serie.repetition }}
+              </tr>
+            </td>
+            <td>
+              <tr *ngFor="let serie of exercice.series">
+                {{ serie.weight }}
+              </tr>
+            </td>
+            <td>
+              <button class="btn btn-default" (click)="editExercice(exercice)">Edit exercice</button>
+              <button class="btn btn-default" (click)="deleteExercice(exercice)">Supprimer exercice</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <button class="btn btn-default" (click)="addExercice()">Ajout exercice</button>
+    </div>
+  </div>
+</div>
