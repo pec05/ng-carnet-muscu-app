@@ -5796,16 +5796,6 @@ strong{
   text-decoration:none;
   padding:0
 }
-.navbar a.navbar-brand span{
-  display:block;
-  width:604px;
-  height:605px;
-  background:url("../images/fitness-logo.png") -1px -48px no-repeat;
-  opacity:0;
-  -moz-transition:opacity .12s ease-in-out;
-  -webkit-transition:opacity .12s ease-in-out;
-  -o-transition:opacity .12s ease-in-out
-}
 .navbar a:hover.navbar-brand span{
   opacity:1
 }
